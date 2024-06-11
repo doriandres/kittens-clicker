@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KittensClicker</string>
+    <string name="default_cat_description">Cute cat to pet</string>
 </resources>
