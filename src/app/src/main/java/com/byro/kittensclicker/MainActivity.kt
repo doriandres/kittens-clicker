@@ -94,16 +94,19 @@ fun Root(modifier: Modifier = Modifier) {
                     indication = null
                 )
                 .animateContentSize()
-                .width(if (expanded) 500.dp else 480.dp)
+                .width(if (expanded) 500.dp else 400.dp)
         )
-        Button(onClick = {
-            if (clicksCount >= autoClickCost) {
-                clicksCount -= autoClickCost;
-                autoClickCost *= 10;
-                autoClicks++;
+        Button(
+            enabled = clicksCount >= autoClickCost,
+            onClick = {
+                if (clicksCount >= autoClickCost) {
+                    clicksCount -= autoClickCost;
+                    autoClickCost *= 10;
+                    autoClicks++;
+                }
             }
-        }) {
-            Text(text = "Buy 1 auto-click (₡ ${autoClickCost})", fontSize = 30.sp)
+        ) {
+            Text(text = "Buy auto-click ₡ ${autoClickCost}", fontSize = 22.sp)
         }
     }
 }
